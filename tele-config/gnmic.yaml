@@ -1,0 +1,73 @@
+# Copyright 2023 Nokia
+# Licensed under the BSD 3-Clause License.
+# SPDX-License-Identifier: BSD-3-Clause
+
+# © 2022 Nokia.
+#
+# This code is a Contribution to the gNMIc project (“Work”) made under the Google Software Grant and Corporate Contributor License Agreement (“CLA”) and governed by the Apache License 2.0.
+# No other rights or licenses in or to any of Nokia’s intellectual property are granted for any other purpose.
+# This code is provided on an “as is” basis without any warranties of any kind.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+username: admin
+password: admin
+insecure: true
+encoding: json_ietf
+log: true
+
+targets:
+  #SROS
+  clab-bgpprefixsid-R01-IXR:57400:
+  clab-bgpprefixsid-R02-IXR:57400:
+  clab-bgpprefixsid-R03-IXR:57400:
+  clab-bgpprefixsid-R04-IXR:57400:
+  clab-bgpprefixsid-R05-SR:57400:
+  clab-bgpprefixsid-R06-SR:57400:
+  clab-bgpprefixsid-R07-SR:57400:
+  clab-bgpprefixsid-R08-SR:57400:
+  clab-bgpprefixsid-R09-SR:57400:
+  clab-bgpprefixsid-R10-SR:57400:
+  clab-bgpprefixsid-R11-SR:57400:
+  clab-bgpprefixsid-R12-SR:57400:
+  clab-bgpprefixsid-R13-IXR:57400:
+  clab-bgpprefixsid-R14-IXR:57400:
+  clab-bgpprefixsid-R15-IXR:57400:
+  clab-bgpprefixsid-R16-IXR:57400:
+
+subscriptions:
+  sub1:
+    paths:
+      - /state/port/ethernet/
+      - /state/router/interface/
+      - /state/system/cpu
+      - /state/system/memory-pools
+      - /state/port/oper-state
+      - /state/oam-pm
+    stream-mode: sample
+    sample-interval: 10s
+  
+outputs:     
+  prom-output:
+    type: prometheus
+    listen: "clab-bgpprefixsid-gnmic:9804"
+    strings-as-labels: true
+    service-registration:
+      address:  clab-bgpprefixsid-consul-agent:8500
+    event-processors:
+      - up-down-map
+
+processors:
+  up-down-map:
+    event-strings:
+      value-names:
+        - oper-state
+      transforms:
+        - replace:
+            apply-on: "value"
+            old: "up"
+            new: "1"
+        - replace:
+            apply-on: "value"
+            old: "down"
+            new: "0"
