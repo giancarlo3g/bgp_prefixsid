@@ -177,6 +177,9 @@ topology:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.1
         - ifconfig eth1.10 netmask 255.255.255.0 
+        - ip link add link eth1 name eth1.116 type vlan id 116
+        - ifconfig eth1.116 192.168.116.1
+        - ifconfig eth1.116 netmask 255.255.255.0 
     tester2:
       kind: linux
       mgmt-ipv4: 172.20.20.121
@@ -237,7 +240,10 @@ topology:
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.16
-        - ifconfig eth1.10 netmask 255.255.255.0 
+        - ifconfig eth1.10 netmask 255.255.255.0  
+        - ip link add link eth1 name eth1.116 type vlan id 116
+        - ifconfig eth1.116 192.168.116.16
+        - ifconfig eth1.116 netmask 255.255.255.0 
 
 #################################################################################################################################################
 #Telemetry 
