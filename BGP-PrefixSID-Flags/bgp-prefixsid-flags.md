@@ -1,14 +1,14 @@
-# BGP Prefix SID
+# BGP Prefix SID Flags
 
 ## 1. Objective
 
-Identify the Flag values sent via BGP Prefix SID from an SROS-based node. The goal is to validate N-flag is not being sent.
+Identify the Flag values sent via BGP Prefix SID from an SROS-based node. The goal is to validate what Label-Index TLV Flags are being sent.
 
 ## 2. Lab Setup
 
 Reusing Lab topology, we will analyze BGP-LU with Prefix SID sent by R5 (ABR) to R7 (RR).
 
-![Topology](./Topology.png)
+![Topology](../Topology.png)
 
 ### 2.1 Configuration
 BGP sessions
@@ -427,4 +427,9 @@ According to [RFC 8669](https://datatracker.ietf.org/doc/rfc8669/), Flags for La
 ```
 
 Based on this, BGP update received at 10.0.0.7 from 10.0.0.5 does not contain any Flag.
-![BGP-update](./bgp-prefixsid-Nflag.png)
+
+![BGP-update](./bgp-prefixsid-flags.png)
+
+IANA BGP Prefix-SID Label-Index TLV Flags have not been assined. [IANA site](https://www.iana.org/assignments/bgp-parameters/bgp-parameters.xhtml#bgp-prefix-sid-label-index-tlv-flags)
+
+![IANA](./IANA-BGP_PrefixSID-flags.png)
