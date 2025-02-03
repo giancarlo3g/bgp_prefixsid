@@ -426,10 +426,14 @@ According to [RFC 8669](https://datatracker.ietf.org/doc/rfc8669/), Flags for La
 
 ```
 
+IANA BGP Prefix-SID Label-Index TLV Flags have not been assined. [IANA site](https://www.iana.org/assignments/bgp-parameters/bgp-parameters.xhtml#bgp-prefix-sid-label-index-tlv-flags)
+
+![IANA](./IANA-BGP_PrefixSID-flags.png)
+
 Based on this, BGP update received at 10.0.0.7 from 10.0.0.5 does not contain any Flag.
 
 ![BGP-update](./bgp-prefixsid-flags.png)
 
-IANA BGP Prefix-SID Label-Index TLV Flags have not been assined. [IANA site](https://www.iana.org/assignments/bgp-parameters/bgp-parameters.xhtml#bgp-prefix-sid-label-index-tlv-flags)
+Similarly, when R5 (10.0.0.5) exports and IGP SR-ISIS Prefix-SID from access like R1 (10.0.10.1/32) via BGP-LU to R7 (10.0.0.7), no flags are set.
 
-![IANA](./IANA-BGP_PrefixSID-flags.png)
+![BGP-update](./bgp-prefixsid-flags-2.png)
