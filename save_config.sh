@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# List of files to check
+if [ ! -d ./config ]; then
+  mkdir -p ./config
+fi
+
+# SROS devices
 yes | cp ./clab-bgpprefixsid/R01-IXR/tftpboot/config.txt ./config/R01-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R02-IXR/tftpboot/config.txt ./config/R02-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R03-IXR/tftpboot/config.txt ./config/R03-IXR.cfg
@@ -16,3 +22,8 @@ yes | cp ./clab-bgpprefixsid/R13-IXR/tftpboot/config.txt ./config/R13-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R14-IXR/tftpboot/config.txt ./config/R14-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R15-IXR/tftpboot/config.txt ./config/R15-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R16-IXR/tftpboot/config.txt ./config/R16-IXR.cfg
+
+# SRL devices
+yes | cp ./clab-bgpprefixsid/R12-SXR/config/config.json ./config/R12-SXR.json
+yes | scp bgpprefixsid-R12-SXR:/home/admin/config.cfg ./config/R12-SXR.cfg
+

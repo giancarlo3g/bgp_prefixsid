@@ -1,15 +1,14 @@
 name: bgpprefixsid
-# topology based on 16 nodes
-# different platform types include 7750 and 7250 based on SROS
-
-mgmt:
-  network: net3         # management network name
-  ipv4-subnet: 172.20.20.0/24       # ipv4 range
+prefix: __lab-name
 
 topology:
   defaults:
     kind: nokia_sros
   kinds:
+    nokia_srlinux:
+      image: ghcr.io/nokia/srlinux:24.10.1
+      # license is required to run IXR-DNX and 7730 on Containerlab
+      license: ../license-srl24.10.txt
     nokia_sros:
       image: registry.srlinux.dev/pub/nokia_sros:24.10.R1
       license: ../license-sros24.txt
@@ -22,7 +21,6 @@ topology:
       type: >-
           cpu=4 min_ram=10 max_nics=20 chassis=ixr-r6 slot=A card=cpiom-ixr-r6 slot=1 card=iom-ixr-r6 mda/1=m4-10g-sfp++1-100g-cfp2 mda/2=m6-10g-sfp++1-100g-qsfp28
       startup-config: ./config/R01-IXR.cfg
-      mgmt-ipv4: 172.20.20.101
       ports:
         - 50101:22
         - 50102:57400
@@ -31,7 +29,6 @@ topology:
       kind: nokia_sros
       type: ixr-e2   
       startup-config: ./config/R02-IXR.cfg
-      mgmt-ipv4: 172.20.20.102
       ports:
         - 50201:22
         - 50202:57400
@@ -41,7 +38,6 @@ topology:
       type: >-
           cpu=4 min_ram=10 max_nics=20 chassis=ixr-r6 slot=A card=cpiom-ixr-r6 slot=1 card=iom-ixr-r6 mda/1=m4-10g-sfp++1-100g-cfp2 mda/2=m6-10g-sfp++1-100g-qsfp28
       startup-config: ./config/R03-IXR.cfg
-      mgmt-ipv4: 172.20.20.103
       ports:
         - 50301:22
         - 50302:57400
@@ -51,7 +47,6 @@ topology:
       type: >-
           cpu=4 min_ram=10 max_nics=20 chassis=ixr-r6 slot=A card=cpiom-ixr-r6 slot=1 card=iom-ixr-r6 mda/1=m4-10g-sfp++1-100g-cfp2 mda/2=m6-10g-sfp++1-100g-qsfp28
       startup-config: ./config/R04-IXR.cfg
-      mgmt-ipv4: 172.20.20.104
       ports:
         - 50401:22
         - 50402:57400
@@ -61,7 +56,6 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R05-SR.cfg
-      mgmt-ipv4: 172.20.20.105
       ports:
         - 50501:22
         - 50502:57400
@@ -70,7 +64,6 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R06-SR.cfg
-      mgmt-ipv4: 172.20.20.106
       ports:
         - 50601:22
         - 50602:57400
@@ -79,7 +72,6 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R07-SR.cfg
-      mgmt-ipv4: 172.20.20.107
       ports:
         - 50701:22
         - 50702:57400
@@ -88,7 +80,6 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R08-SR.cfg
-      mgmt-ipv4: 172.20.20.108
       ports:
         - 50801:22
         - 50802:57400
@@ -97,7 +88,6 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R09-SR.cfg
-      mgmt-ipv4: 172.20.20.109
       ports:
         - 50901:22
         - 50902:57400
@@ -106,7 +96,6 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R10-SR.cfg
-      mgmt-ipv4: 172.20.20.110
       ports:
         - 51001:22
         - 51002:57400
@@ -115,16 +104,22 @@ topology:
       kind: nokia_sros
       type: sr-1
       startup-config: ./config/R11-SR.cfg
-      mgmt-ipv4: 172.20.20.111
       ports:
         - 51101:22
         - 51102:57400
         - 51103:830
-    R12-SR: #SR-1
-      kind: nokia_sros
-      type: sr-1
-      startup-config: ./config/R12-SR.cfg
-      mgmt-ipv4: 172.20.20.112
+    # R12-SR: #SR-1
+    #   kind: nokia_sros
+    #   type: sr-1
+    #   startup-config: ./config/R12-SR.cfg
+    #   ports:
+    #     - 51201:22
+    #     - 51202:57400
+    #     - 51203:830
+    R12-SXR: #SXR
+      kind: nokia_srlinux
+      type: sxr1d32d
+      startup-config: ./config/R12-SXR.json
       ports:
         - 51201:22
         - 51202:57400
@@ -136,7 +131,6 @@ topology:
           cp: cpu=2 ram=4 chassis=ixr-r6d slot=A card=cpm-ixr-r6d/iom-ixr-r6d ___
           lc: cpu=4 ram=6 chassis=ixr-r6d slot=1 card=cpm-ixr-r6d/iom-ixr-r6d mda/1=m5-100g-qsfp28
       startup-config: ./config/R13-IXR.cfg
-      mgmt-ipv4: 172.20.20.113
       ports: 
         - 51301:22
         - 51302:57400
@@ -145,7 +139,6 @@ topology:
       kind: nokia_sros
       type: ixr-e2
       startup-config: ./config/R14-IXR.cfg
-      mgmt-ipv4: 172.20.20.114
       ports:
         - 51401:22
         - 51402:57400
@@ -156,7 +149,6 @@ topology:
           cp: cpu=2 ram=4 chassis=ixr-r6d slot=A card=cpm-ixr-r6d/iom-ixr-r6d ___
           lc: cpu=4 ram=6 chassis=ixr-r6d slot=1 card=cpm-ixr-r6d/iom-ixr-r6d mda/1=m5-100g-qsfp28
       startup-config: ./config/R15-IXR.cfg
-      mgmt-ipv4: 172.20.20.115
       ports:
         - 51501:22
         - 51502:57400
@@ -165,14 +157,12 @@ topology:
       kind: nokia_sros
       type: ixr-e2
       startup-config: ./config/R16-IXR.cfg
-      mgmt-ipv4: 172.20.20.116
       ports:
         - 51601:22
         - 51602:57400
         - 51603:830  
     tester1:
       kind: linux
-      mgmt-ipv4: 172.20.20.120
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.1
@@ -182,7 +172,6 @@ topology:
         - ifconfig eth1.116 netmask 255.255.255.0 
     tester2:
       kind: linux
-      mgmt-ipv4: 172.20.20.121
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.2
@@ -193,20 +182,17 @@ topology:
         - route add default gw 192.168.200.1 eth1.20 
     tester3:
       kind: linux
-      mgmt-ipv4: 172.20.20.122
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.3
         - ifconfig eth1.10 netmask 255.255.255.0 
     tester4:
       kind: linux
-      mgmt-ipv4: 172.20.20.123
       exec:
         - ifconfig eth1 192.168.0.4
         - ifconfig eth1 netmask 255.255.255.0
     tester5:
       kind: linux
-      mgmt-ipv4: 172.20.20.124
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.5
@@ -217,26 +203,22 @@ topology:
         - route add default gw 192.168.20.1 eth1.20
     tester11:
       kind: linux
-      mgmt-ipv4: 172.20.20.125
       exec:
         - ifconfig eth1 192.168.0.11
         - ifconfig eth1 netmask 255.255.255.0
     tester13:
       kind: linux
-      mgmt-ipv4: 172.20.20.126
       exec:
         - ifconfig eth1 192.168.0.13
         - ifconfig eth1 netmask 255.255.255.0
     tester14:
       kind: linux
-      mgmt-ipv4: 172.20.20.127
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.14
         - ifconfig eth1.10 netmask 255.255.255.0
     tester16:
       kind: linux
-      mgmt-ipv4: 172.20.20.128
       exec:
         - ip link add link eth1 name eth1.10 type vlan id 10
         - ifconfig eth1.10 192.168.0.16
@@ -251,7 +233,6 @@ topology:
     gnmic:
       kind: linux
       image: ghcr.io/openconfig/gnmic
-      mgmt-ipv4: 172.20.20.150
       binds:
         - ./tele-config/gnmic.yaml:/app/gnmic.yaml:ro
         - /var/run/docker.sock:/var/run/docker.sock
@@ -260,7 +241,6 @@ topology:
     consul-agent:
       kind: linux
       image: consul:1.15.4
-      mgmt-ipv4: 172.20.20.151
       ports:
         - 8500:8500
         - 8600:8600/udp
@@ -269,7 +249,6 @@ topology:
     prometheus:
       kind: linux
       image: prom/prometheus:latest
-      mgmt-ipv4: 172.20.20.152
       user: 65534:65534
       ports:
         - 9090:9090
@@ -284,7 +263,6 @@ topology:
     grafana:
       kind: linux
       image: grafana/grafana:latest
-      mgmt-ipv4: 172.20.20.153
       binds:
         - ./tele-config/grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - ./tele-config/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -292,8 +270,11 @@ topology:
       ports:
         - 3000:3000 
 
+#################################################################################################################################################
+#Links 
+#################################################################################################################################################
+
   links:
-  #Connections of the first ring 
     - endpoints: ["R01-IXR:eth5", "R02-IXR:eth3"]
     - endpoints: ["R01-IXR:eth12", "R03-IXR:eth12"]
     - endpoints: ["R01-IXR:eth1", "tester1:eth1"]
@@ -305,7 +286,8 @@ topology:
     - endpoints: ["R07-SR:eth3", "R09-SR:eth1"]
     - endpoints: ["R09-SR:eth2", "R10-SR:eth2"]
     - endpoints: ["R09-SR:eth3", "R11-SR:eth1"]
-    - endpoints: ["R11-SR:eth2", "R12-SR:eth2"]
+    # - endpoints: ["R11-SR:eth2", "R12-SR:eth2"]
+    - endpoints: ["R11-SR:eth2", "R12-SXR:e1-2"]
     - endpoints: ["R11-SR:eth3", "R13-IXR:eth1"]
     - endpoints: ["R13-IXR:eth2", "tester13:eth1"]
     - endpoints: ["R13-IXR:eth3", "R15-IXR:eth1"]
@@ -313,8 +295,10 @@ topology:
     - endpoints: ["R16-IXR:eth2", "tester16:eth1"]
     - endpoints: ["R15-IXR:eth3", "R14-IXR:eth1"]
     - endpoints: ["R14-IXR:eth2", "tester14:eth1"]
-    - endpoints: ["R14-IXR:eth3", "R12-SR:eth1"]
-    - endpoints: ["R12-SR:eth3", "R10-SR:eth1"]
+    # - endpoints: ["R14-IXR:eth3", "R12-SR:eth1"]
+    - endpoints: ["R14-IXR:eth3", "R12-SXR:e1-1"]
+    # - endpoints: ["R12-SR:eth3", "R10-SR:eth1"]
+    - endpoints: ["R12-SXR:e1-3", "R10-SR:eth1"]
     - endpoints: ["R10-SR:eth3", "R08-SR:eth1"]
     - endpoints: ["R08-SR:eth3", "R06-SR:eth1"]
     - endpoints: ["R06-SR:eth3", "R04-IXR:eth5"]
