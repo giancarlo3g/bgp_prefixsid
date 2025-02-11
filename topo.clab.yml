@@ -6,7 +6,7 @@ topology:
     kind: nokia_sros
   kinds:
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:24.10.1
+      image: ghcr.io/nokia/srlinux:24.10.2
       # license is required to run IXR-DNX and 7730 on Containerlab
       license: ../license-srl24.10.txt
     nokia_sros:
