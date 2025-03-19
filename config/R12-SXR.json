@@ -4,96 +4,96 @@
       "generated-by": "SRLINUX",
       "name": "",
       "comment": "",
-      "created": "2025-02-06T15:46:29.008Z",
-      "release": "v24.10.1",
-      "enabled-yang-features": ["srl_nokia-features:aaa-spiffe-id", "srl_nokia-features:aaa-superuser", "srl_nokia-features:acl-cpm-filter-match-network-instance", "srl_nokia-features:acl-filter-allowed-on-irb-interfaces", "srl_nokia-features:acl-filter-allowed-on-l2-interfaces", "srl_nokia-features:acl-filter-qos-forwarding-class", "srl_nokia-features:acl-filter-qos-profile", "srl_nokia-features:acl-filter-redirect-to-next-hop", "srl_nokia-features:acl-ip-prefix-list", "srl_nokia-features:acl-policer", "srl_nokia-features:admin-user-roles", "srl_nokia-features:anycast-gw", "srl_nokia-features:arp-nd-datapath-programming", "srl_nokia-features:backplane-facing-capacity", "srl_nokia-features:bfd", "srl_nokia-features:bgp-add-paths", "srl_nokia-features:bgp-add-paths-labeled-unicast", "srl_nokia-features:bgp-afi-safi-policy", "srl_nokia-features:bgp-auth-password", "srl_nokia-features:bgp-backup-path-frr-label-ip", "srl_nokia-features:bgp-backup-path-frr-vpn", "srl_nokia-features:bgp-cfg-afi-safi-list", "srl_nokia-features:bgp-graceful-restart-gaps", "srl_nokia-features:bgp-import-export-policy-leaflist", "srl_nokia-features:bgp-ipv6-next-hop-tunnel-resolution", "srl_nokia-features:bgp-labeled-unicast", "srl_nokia-features:bgp-labeled-unicast-over-sr-te", "srl_nokia-features:bgp-labeled-unicast-prefix-sid", "srl_nokia-features:bgp-local-as-container-iso-list", "srl_nokia-features:bgp-max-ecmp-hash-buckets", "srl_nokia-features:bgp-mtu-discovery", "srl_nokia-features:bgp-multipath-maximum-paths", "srl_nokia-features:bgp-next-hop-resolution-tag", "srl_nokia-features:bgp-prefix-limit", "srl_nokia-features:bgp-prefix-limit-last-exceeded", "srl_nokia-features:bgp-prefix-limit-received", "srl_nokia-features:bgp-restart-max-wait", "srl_nokia-features:bgp-rib-afi-safi-list", "srl_nokia-features:bgp-rib-afi-safi-list-for-evpn", "srl_nokia-features:bgp-rib-afi-safi-route", "srl_nokia-features:bgp-rtc", "srl_nokia-features:bgp-single-hop-connected-check", "srl_nokia-features:bgp-unnumbered-peers", "srl_nokia-features:breakout-ports-4", "srl_nokia-features:breakout-speed-100G", "srl_nokia-features:breakout-speed-10G", "srl_nokia-features:breakout-speed-25G", "srl_nokia-features:bridged", "srl_nokia-features:bt-split-horizon-groups", "srl_nokia-features:cli-plugin-authorization", "srl_nokia-features:combined-bgp-ecmp", "srl_nokia-features:config-l2-mtu-default", "srl_nokia-features:config-sub-if-l2-mtu", "srl_nokia-features:configurable-intf-mac-addr", "srl_nokia-features:connection-point", "srl_nokia-features:cpm-warm-redundancy", "srl_nokia-features:dhcp-relay-fqdn", "srl_nokia-features:entropy-bgp-sr", "srl_nokia-features:ethcfm", "srl_nokia-features:ethcfm-mp-custom-mac-address", "srl_nokia-features:ethcfm-mp-mac-address-allocation", "srl_nokia-features:ethcfm-opcode-stats", "srl_nokia-features:ethcfm-sender-id-tx", "srl_nokia-features:event-handler", "srl_nokia-features:evpn", "srl_nokia-features:evpn-ifl-unequal-ecmp", "srl_nokia-features:evpn-mh", "srl_nokia-features:evpn-mh-ip-aliasing", "srl_nokia-features:evpn-mh-virtual-es", "srl_nokia-features:evpn-mpls", "srl_nokia-features:evpn-mpls-control-word", "srl_nokia-features:evpn-mpls-shg", "srl_nokia-features:evpn-route-internal-tags", "srl_nokia-features:factory-reset", "srl_nokia-features:fib-programming-progress", "srl_nokia-features:fixed", "srl_nokia-features:flow-aware-transport-label", "srl_nokia-features:flow-aware-transport-label-evpn-mpls-vpws", "srl_nokia-features:fpcx", "srl_nokia-features:gnmi-extensions", "srl_nokia-features:gnmi-services", "srl_nokia-features:gnoi-bgp", "srl_nokia-features:gnoi-export-protos", "srl_nokia-features:gnoi-healthz", "srl_nokia-features:gnsi-accounting", "srl_nokia-features:gnsi-authz", "srl_nokia-features:gnsi-certz", "srl_nokia-features:gnsi-credentialz", "srl_nokia-features:gnsi-pathz", "srl_nokia-features:grpc-server", "srl_nokia-features:grpc-server-max-concurrent-streams", "srl_nokia-features:icmp-rate-control", "srl_nokia-features:igmp", "srl_nokia-features:igmp-ipvrf", "srl_nokia-features:inter-as-nhsrr-ipvpn", "srl_nokia-features:interface-evpn-internal-tags", "srl_nokia-features:interface-references", "srl_nokia-features:internal-tags", "srl_nokia-features:ip-acl-dscp-set", "srl_nokia-features:ipv4-unnumbered", "srl_nokia-features:ipvpn", "srl_nokia-features:ipvpn-route-internal-tags", "srl_nokia-features:isis-adjsid-holdtime", "srl_nokia-features:isis-dyn-delay", "srl_nokia-features:isis-level-passive", "srl_nokia-features:isis-lfa", "srl_nokia-features:isis-lsdb", "srl_nokia-features:isis-mi", "srl_nokia-features:isis-mt", "srl_nokia-features:isis-nsf", "srl_nokia-features:l2-proxy-arp", "srl_nokia-features:l2-proxy-arp-nd-control-flood-on-evpn", "srl_nokia-features:l2-proxy-arp-nd-route-internal-tags", "srl_nokia-features:l2-proxy-nd", "srl_nokia-features:l2cp-transparency", "srl_nokia-features:l2cp-transparency-efm-oam", "srl_nokia-features:l2cp-transparency-elmi", "srl_nokia-features:l2cp-transparency-esmc", "srl_nokia-features:l3-proxy-arp", "srl_nokia-features:l3-proxy-arp-irb", "srl_nokia-features:l3-proxy-nd", "srl_nokia-features:l3-proxy-nd-irb", "srl_nokia-features:label-management", "srl_nokia-features:label-range-user-owner", "srl_nokia-features:lacp-fallback", "srl_nokia-features:lag", "srl_nokia-features:ldp", "srl_nokia-features:ldp-bfd", "srl_nokia-features:ldp-entropy-label", "srl_nokia-features:ldp-ipv4-auto-rx-tx-targeted", "srl_nokia-features:ldp-ipv6", "srl_nokia-features:ldp-label-wdraw-delay", "srl_nokia-features:ldp-lfa", "srl_nokia-features:ldp-local-lsr-id", "srl_nokia-features:ldp-prefix-policies", "srl_nokia-features:ldp-rlfa", "srl_nokia-features:ldp-static-fec-pop", "srl_nokia-features:ldp-targeted", "srl_nokia-features:ldp-tunnel-down-damp-time", "srl_nokia-features:license", "srl_nokia-features:link-loss-forwarding", "srl_nokia-features:link-measurement", "srl_nokia-features:longest-prefix-match", "srl_nokia-features:maintenance-mode-improvements", "srl_nokia-features:maintenance-policies", "srl_nokia-features:mcast-route-policy", "srl_nokia-features:measured-boot", "srl_nokia-features:mirror-dest-local", "srl_nokia-features:mirror-dest-remote", "srl_nokia-features:mirror-dest-remote-tunnel-encap-mplsogre", "srl_nokia-features:mirror-source-intf", "srl_nokia-features:mirror-source-subintf", "srl_nokia-features:mirroring", "srl_nokia-features:mirroring-intf-stats", "srl_nokia-features:mld", "srl_nokia-features:mld-ipvrf", "srl_nokia-features:mpls", "srl_nokia-features:mpls-oam", "srl_nokia-features:mpls-oam-uncolored-tepolicy", "srl_nokia-features:named-queues-and-named-fcs", "srl_nokia-features:ndk-auto-telemetry-state", "srl_nokia-features:ndk-disable-caching", "srl_nokia-features:netconf", "srl_nokia-features:network-instance-mpls", "srl_nokia-features:network-instance-static-mpls", "srl_nokia-features:nhsrr-evpn", "srl_nokia-features:oam", "srl_nokia-features:oam-pm", "srl_nokia-features:oam-pm-ip", "srl_nokia-features:pcep-pcc", "srl_nokia-features:pim", "srl_nokia-features:pim-ipvrf", "srl_nokia-features:platform-7730-sxr-1d-32d", "srl_nokia-features:port-breakout", "srl_nokia-features:port-speed-100G", "srl_nokia-features:port-speed-10G", "srl_nokia-features:port-speed-1G", "srl_nokia-features:port-speed-25G", "srl_nokia-features:port-speed-400G", "srl_nokia-features:port-speed-40G", "srl_nokia-features:pseudowire", "srl_nokia-features:pseudowire-in-vpws", "srl_nokia-features:qinq", "srl_nokia-features:qos", "srl_nokia-features:qos-classify-profile", "srl_nokia-features:qos-committed-burst-size-table", "srl_nokia-features:qos-de-out-profile", "srl_nokia-features:qos-dot1p-classifier-policy", "srl_nokia-features:qos-dot1p-rewrite-policy", "srl_nokia-features:qos-drop-zones", "srl_nokia-features:qos-dscp-classifier-policy", "srl_nokia-features:qos-dscp-reclassifier-policy", "srl_nokia-features:qos-dscp-rewrite-policy", "srl_nokia-features:qos-forwarding-class-index", "srl_nokia-features:qos-forwarding-class-resource-priority", "srl_nokia-features:qos-forwarding-complexes", "srl_nokia-features:qos-fp-pool-policy", "srl_nokia-features:qos-input-class-map", "srl_nokia-features:qos-interface-pool-policy", "srl_nokia-features:qos-ip-rewrite-policy", "srl_nokia-features:qos-ler-use-dscp", "srl_nokia-features:qos-match-qinq-dot1p", "srl_nokia-features:qos-mpls-classifier-policy", "srl_nokia-features:qos-mpls-rewrite-policy", "srl_nokia-features:qos-multi-traffic-queue", "srl_nokia-features:qos-output-class-map", "srl_nokia-features:qos-policer-policies", "srl_nokia-features:qos-queue-cbs-adaptation-rule", "srl_nokia-features:qos-queue-committed-burst-size", "srl_nokia-features:qos-queue-mbs-adaptation-rule", "srl_nokia-features:qos-queue-profile-stats", "srl_nokia-features:qos-queue-scheduling-class", "srl_nokia-features:qos-queue-scheduling-policy", "srl_nokia-features:qos-resource-management", "srl_nokia-features:qos-resource-utilization-thresholds", "srl_nokia-features:qos-rewrite-inner-de", "srl_nokia-features:qos-rewrite-inner-dot1p", "srl_nokia-features:qos-rewrite-outer-de", "srl_nokia-features:qos-rewrite-outer-dot1p", "srl_nokia-features:qos-rewrite-profile", "srl_nokia-features:qos-sched-class-scheduling-policy", "srl_nokia-features:qos-scheduling-priority-mapping", "srl_nokia-features:qos-slope-policy", "srl_nokia-features:qos-subinterface-dot1p-rewrite", "srl_nokia-features:qos-subinterface-dscp-rewrite", "srl_nokia-features:qos-subinterface-members", "srl_nokia-features:qos-subinterface-queue-type", "srl_nokia-features:qos-system-generated-traffic-map", "srl_nokia-features:qos-tos-rewrite", "srl_nokia-features:radius-source-address", "srl_nokia-features:reload-delay", "srl_nokia-features:route-leaking", "srl_nokia-features:routing-policy-bgp-med", "srl_nokia-features:routing-policy-bgp-next-hop-resolution-action", "srl_nokia-features:routing-policy-bgp-next-hop-self-action", "srl_nokia-features:routing-policy-bgp-next-hop-set-action", "srl_nokia-features:routing-policy-community-match-set-options", "srl_nokia-features:routing-policy-match-protocol-redefine", "srl_nokia-features:routing-policy-named-statements", "srl_nokia-features:routing-policy-next-policy", "srl_nokia-features:routing-policy-next-statement", "srl_nokia-features:routing-policy-preference-action", "srl_nokia-features:routing-policy-tag-set-match-options", "srl_nokia-features:seamless-bfd", "srl_nokia-features:secure-boot", "srl_nokia-features:segment-routing", "srl_nokia-features:segment-routing-adjacency-sid", "srl_nokia-features:segment-routing-shared-sid", "srl_nokia-features:snmp-counters", "srl_nokia-features:snmp-over-tcp", "srl_nokia-features:snmp-traps", "srl_nokia-features:snmp-v3", "srl_nokia-features:stamp", "srl_nokia-features:static-route-tag-set", "srl_nokia-features:static-route-tag-value", "srl_nokia-features:storm-control", "srl_nokia-features:subif-stats-per-ipv4-ipv6-container", "srl_nokia-features:sync", "srl_nokia-features:sync-gnss", "srl_nokia-features:sync-one-pps", "srl_nokia-features:sync-ptp-ip-peers", "srl_nokia-features:sync0-port", "srl_nokia-features:system-resource-mpls-next-hops", "srl_nokia-features:system-resource-pg-groups", "srl_nokia-features:system-resource-tunnels", "srl_nokia-features:system-resource-utilization", "srl_nokia-features:tacacs-source-address", "srl_nokia-features:te-policies", "srl_nokia-features:te-policies-entropy-label", "srl_nokia-features:te-policies-tag-set", "srl_nokia-features:te-policy-delay-metric-limit", "srl_nokia-features:te-policy-exclude-srlg", "srl_nokia-features:tpm-idevid", "srl_nokia-features:tpm-oidevid", "srl_nokia-features:traffic-engineering", "srl_nokia-features:traffic-engineering-isis-tedb-install", "srl_nokia-features:twamp", "srl_nokia-features:virtual-ip-discovery", "srl_nokia-features:vlan-id-any", "srl_nokia-features:vlan-id-optional", "srl_nokia-features:vlan-tpid", "srl_nokia-features:vpws", "srl_nokia-features:vrrp"],
-      "checksum": "ac8f14fc4b563221$44ed7ecced4ff60dc018cc4eecab66f2cc86709e"
+      "created": "2025-03-18T23:59:32.240Z",
+      "release": "v24.10.2",
+      "enabled-yang-features": ["srl_nokia-features:aaa-spiffe-id", "srl_nokia-features:aaa-superuser", "srl_nokia-features:acl-cpm-filter-match-network-instance", "srl_nokia-features:acl-cpm-filter-type-mac", "srl_nokia-features:acl-filter-allowed-on-irb-interfaces", "srl_nokia-features:acl-filter-allowed-on-l2-interfaces", "srl_nokia-features:acl-filter-qos-forwarding-class", "srl_nokia-features:acl-filter-qos-profile", "srl_nokia-features:acl-filter-redirect-to-next-hop", "srl_nokia-features:acl-ip-prefix-list", "srl_nokia-features:acl-policer", "srl_nokia-features:admin-user-roles", "srl_nokia-features:anycast-gw", "srl_nokia-features:arp-nd-datapath-programming", "srl_nokia-features:backplane-facing-capacity", "srl_nokia-features:bfd", "srl_nokia-features:bgp-add-paths", "srl_nokia-features:bgp-add-paths-labeled-unicast", "srl_nokia-features:bgp-afi-safi-policy", "srl_nokia-features:bgp-auth-password", "srl_nokia-features:bgp-backup-path-frr-label-ip", "srl_nokia-features:bgp-backup-path-frr-vpn", "srl_nokia-features:bgp-cfg-afi-safi-list", "srl_nokia-features:bgp-graceful-restart-gaps", "srl_nokia-features:bgp-import-export-policy-leaflist", "srl_nokia-features:bgp-ipv6-next-hop-tunnel-resolution", "srl_nokia-features:bgp-labeled-unicast", "srl_nokia-features:bgp-labeled-unicast-over-sr-te", "srl_nokia-features:bgp-labeled-unicast-prefix-sid", "srl_nokia-features:bgp-local-as-container-iso-list", "srl_nokia-features:bgp-max-ecmp-hash-buckets", "srl_nokia-features:bgp-mtu-discovery", "srl_nokia-features:bgp-multipath-maximum-paths", "srl_nokia-features:bgp-next-hop-resolution-tag", "srl_nokia-features:bgp-prefix-limit", "srl_nokia-features:bgp-prefix-limit-last-exceeded", "srl_nokia-features:bgp-prefix-limit-received", "srl_nokia-features:bgp-restart-max-wait", "srl_nokia-features:bgp-rib-afi-safi-list", "srl_nokia-features:bgp-rib-afi-safi-list-for-evpn", "srl_nokia-features:bgp-rib-afi-safi-route", "srl_nokia-features:bgp-rtc", "srl_nokia-features:bgp-single-hop-connected-check", "srl_nokia-features:bgp-unnumbered-peers", "srl_nokia-features:breakout-ports-4", "srl_nokia-features:breakout-speed-100G", "srl_nokia-features:breakout-speed-10G", "srl_nokia-features:breakout-speed-25G", "srl_nokia-features:bridged", "srl_nokia-features:bt-split-horizon-groups", "srl_nokia-features:cli-plugin-authorization", "srl_nokia-features:combined-bgp-ecmp", "srl_nokia-features:config-l2-mtu-default", "srl_nokia-features:config-sub-if-l2-mtu", "srl_nokia-features:configurable-intf-mac-addr", "srl_nokia-features:connection-point", "srl_nokia-features:cpm-warm-redundancy", "srl_nokia-features:dhcp-relay-fqdn", "srl_nokia-features:entropy-bgp-sr", "srl_nokia-features:ethcfm", "srl_nokia-features:ethcfm-mp-custom-mac-address", "srl_nokia-features:ethcfm-mp-mac-address-allocation", "srl_nokia-features:ethcfm-opcode-stats", "srl_nokia-features:ethcfm-sender-id-tx", "srl_nokia-features:event-handler", "srl_nokia-features:evpn", "srl_nokia-features:evpn-ifl-unequal-ecmp", "srl_nokia-features:evpn-mh", "srl_nokia-features:evpn-mh-ip-aliasing", "srl_nokia-features:evpn-mh-virtual-es", "srl_nokia-features:evpn-mpls", "srl_nokia-features:evpn-mpls-control-word", "srl_nokia-features:evpn-mpls-shg", "srl_nokia-features:evpn-route-internal-tags", "srl_nokia-features:factory-reset", "srl_nokia-features:fib-programming-progress", "srl_nokia-features:fixed", "srl_nokia-features:flow-aware-transport-label", "srl_nokia-features:flow-aware-transport-label-evpn-mpls-vpws", "srl_nokia-features:fpcx", "srl_nokia-features:gnmi-extensions", "srl_nokia-features:gnmi-services", "srl_nokia-features:gnoi-bgp", "srl_nokia-features:gnoi-export-protos", "srl_nokia-features:gnoi-healthz", "srl_nokia-features:gnsi-accounting", "srl_nokia-features:gnsi-authz", "srl_nokia-features:gnsi-certz", "srl_nokia-features:gnsi-credentialz", "srl_nokia-features:gnsi-pathz", "srl_nokia-features:grpc-server", "srl_nokia-features:grpc-server-max-concurrent-streams", "srl_nokia-features:icmp-rate-control", "srl_nokia-features:igmp", "srl_nokia-features:igmp-ipvrf", "srl_nokia-features:inter-as-nhsrr-ipvpn", "srl_nokia-features:interface-evpn-internal-tags", "srl_nokia-features:interface-references", "srl_nokia-features:internal-tags", "srl_nokia-features:ip-acl-dscp-set", "srl_nokia-features:ipv4-unnumbered", "srl_nokia-features:ipvpn", "srl_nokia-features:ipvpn-route-internal-tags", "srl_nokia-features:isis-adjsid-holdtime", "srl_nokia-features:isis-dyn-delay", "srl_nokia-features:isis-level-passive", "srl_nokia-features:isis-lfa", "srl_nokia-features:isis-lsdb", "srl_nokia-features:isis-mi", "srl_nokia-features:isis-mt", "srl_nokia-features:isis-nsf", "srl_nokia-features:l2-proxy-arp", "srl_nokia-features:l2-proxy-arp-nd-control-flood-on-evpn", "srl_nokia-features:l2-proxy-arp-nd-route-internal-tags", "srl_nokia-features:l2-proxy-nd", "srl_nokia-features:l2cp-transparency", "srl_nokia-features:l2cp-transparency-efm-oam", "srl_nokia-features:l2cp-transparency-elmi", "srl_nokia-features:l2cp-transparency-esmc", "srl_nokia-features:l3-proxy-arp", "srl_nokia-features:l3-proxy-arp-irb", "srl_nokia-features:l3-proxy-nd", "srl_nokia-features:l3-proxy-nd-irb", "srl_nokia-features:label-management", "srl_nokia-features:label-range-user-owner", "srl_nokia-features:lacp-fallback", "srl_nokia-features:lag", "srl_nokia-features:ldp", "srl_nokia-features:ldp-bfd", "srl_nokia-features:ldp-entropy-label", "srl_nokia-features:ldp-ipv4-auto-rx-tx-targeted", "srl_nokia-features:ldp-ipv6", "srl_nokia-features:ldp-label-wdraw-delay", "srl_nokia-features:ldp-lfa", "srl_nokia-features:ldp-local-lsr-id", "srl_nokia-features:ldp-prefix-policies", "srl_nokia-features:ldp-rlfa", "srl_nokia-features:ldp-static-fec-pop", "srl_nokia-features:ldp-targeted", "srl_nokia-features:ldp-tunnel-down-damp-time", "srl_nokia-features:license", "srl_nokia-features:link-loss-forwarding", "srl_nokia-features:link-measurement", "srl_nokia-features:longest-prefix-match", "srl_nokia-features:maintenance-mode-improvements", "srl_nokia-features:maintenance-policies", "srl_nokia-features:mcast-route-policy", "srl_nokia-features:measured-boot", "srl_nokia-features:mirror-dest-local", "srl_nokia-features:mirror-dest-remote", "srl_nokia-features:mirror-dest-remote-tunnel-encap-mplsogre", "srl_nokia-features:mirror-source-intf", "srl_nokia-features:mirror-source-subintf", "srl_nokia-features:mirroring", "srl_nokia-features:mirroring-intf-stats", "srl_nokia-features:mld", "srl_nokia-features:mld-ipvrf", "srl_nokia-features:mpls", "srl_nokia-features:mpls-oam", "srl_nokia-features:mpls-oam-uncolored-tepolicy", "srl_nokia-features:named-queues-and-named-fcs", "srl_nokia-features:ndk-auto-telemetry-state", "srl_nokia-features:ndk-disable-caching", "srl_nokia-features:netconf", "srl_nokia-features:network-instance-mpls", "srl_nokia-features:network-instance-static-mpls", "srl_nokia-features:nhsrr-evpn", "srl_nokia-features:oam", "srl_nokia-features:oam-pm", "srl_nokia-features:oam-pm-ip", "srl_nokia-features:pcep-pcc", "srl_nokia-features:pim", "srl_nokia-features:pim-ipvrf", "srl_nokia-features:pim-spt-switchover", "srl_nokia-features:platform-7730-sxr-1d-32d", "srl_nokia-features:port-breakout", "srl_nokia-features:port-speed-100G", "srl_nokia-features:port-speed-10G", "srl_nokia-features:port-speed-1G", "srl_nokia-features:port-speed-25G", "srl_nokia-features:port-speed-400G", "srl_nokia-features:port-speed-40G", "srl_nokia-features:pseudowire", "srl_nokia-features:pseudowire-in-vpws", "srl_nokia-features:qinq", "srl_nokia-features:qos", "srl_nokia-features:qos-classify-profile", "srl_nokia-features:qos-committed-burst-size-table", "srl_nokia-features:qos-de-out-profile", "srl_nokia-features:qos-dot1p-classifier-policy", "srl_nokia-features:qos-dot1p-rewrite-policy", "srl_nokia-features:qos-drop-zones", "srl_nokia-features:qos-dscp-classifier-policy", "srl_nokia-features:qos-dscp-reclassifier-policy", "srl_nokia-features:qos-dscp-rewrite-policy", "srl_nokia-features:qos-forwarding-class-index", "srl_nokia-features:qos-forwarding-class-resource-priority", "srl_nokia-features:qos-forwarding-complexes", "srl_nokia-features:qos-fp-pool-policy", "srl_nokia-features:qos-input-class-map", "srl_nokia-features:qos-interface-pool-policy", "srl_nokia-features:qos-ip-rewrite-policy", "srl_nokia-features:qos-ler-use-dscp", "srl_nokia-features:qos-match-qinq-dot1p", "srl_nokia-features:qos-mpls-classifier-policy", "srl_nokia-features:qos-mpls-rewrite-policy", "srl_nokia-features:qos-multi-traffic-queue", "srl_nokia-features:qos-output-class-map", "srl_nokia-features:qos-policer-policies", "srl_nokia-features:qos-queue-cbs-adaptation-rule", "srl_nokia-features:qos-queue-committed-burst-size", "srl_nokia-features:qos-queue-mbs-adaptation-rule", "srl_nokia-features:qos-queue-profile-stats", "srl_nokia-features:qos-queue-scheduling-class", "srl_nokia-features:qos-queue-scheduling-policy", "srl_nokia-features:qos-resource-management", "srl_nokia-features:qos-resource-utilization-thresholds", "srl_nokia-features:qos-rewrite-inner-de", "srl_nokia-features:qos-rewrite-inner-dot1p", "srl_nokia-features:qos-rewrite-outer-de", "srl_nokia-features:qos-rewrite-outer-dot1p", "srl_nokia-features:qos-rewrite-profile", "srl_nokia-features:qos-sched-class-scheduling-policy", "srl_nokia-features:qos-scheduling-priority-mapping", "srl_nokia-features:qos-slope-policy", "srl_nokia-features:qos-subinterface-dot1p-rewrite", "srl_nokia-features:qos-subinterface-dscp-rewrite", "srl_nokia-features:qos-subinterface-members", "srl_nokia-features:qos-subinterface-queue-type", "srl_nokia-features:qos-system-generated-traffic-map", "srl_nokia-features:qos-tos-rewrite", "srl_nokia-features:radius-source-address", "srl_nokia-features:reload-delay", "srl_nokia-features:route-leaking", "srl_nokia-features:routing-policy-bgp-med", "srl_nokia-features:routing-policy-bgp-next-hop-resolution-action", "srl_nokia-features:routing-policy-bgp-next-hop-self-action", "srl_nokia-features:routing-policy-bgp-next-hop-set-action", "srl_nokia-features:routing-policy-community-match-set-options", "srl_nokia-features:routing-policy-match-protocol-redefine", "srl_nokia-features:routing-policy-named-statements", "srl_nokia-features:routing-policy-next-policy", "srl_nokia-features:routing-policy-next-statement", "srl_nokia-features:routing-policy-preference-action", "srl_nokia-features:routing-policy-tag-set-match-options", "srl_nokia-features:seamless-bfd", "srl_nokia-features:secure-boot", "srl_nokia-features:segment-routing", "srl_nokia-features:segment-routing-adjacency-sid", "srl_nokia-features:segment-routing-shared-sid", "srl_nokia-features:snmp-counters", "srl_nokia-features:snmp-over-tcp", "srl_nokia-features:snmp-tools-trap", "srl_nokia-features:snmp-traps", "srl_nokia-features:snmp-v3", "srl_nokia-features:stamp", "srl_nokia-features:static-route-tag-set", "srl_nokia-features:static-route-tag-value", "srl_nokia-features:storm-control", "srl_nokia-features:subif-stats-per-ipv4-ipv6-container", "srl_nokia-features:sync", "srl_nokia-features:sync-gnss", "srl_nokia-features:sync-one-pps", "srl_nokia-features:sync-ptp-ip-peers", "srl_nokia-features:sync0-port", "srl_nokia-features:system-resource-mpls-next-hops", "srl_nokia-features:system-resource-pg-groups", "srl_nokia-features:system-resource-tunnels", "srl_nokia-features:system-resource-utilization", "srl_nokia-features:tacacs-source-address", "srl_nokia-features:te-policies", "srl_nokia-features:te-policies-entropy-label", "srl_nokia-features:te-policies-tag-set", "srl_nokia-features:te-policy-delay-metric-limit", "srl_nokia-features:te-policy-exclude-srlg", "srl_nokia-features:tpm-idevid", "srl_nokia-features:tpm-oidevid", "srl_nokia-features:traffic-engineering", "srl_nokia-features:traffic-engineering-isis-tedb-install", "srl_nokia-features:twamp", "srl_nokia-features:virtual-ip-discovery", "srl_nokia-features:vlan-id-any", "srl_nokia-features:vlan-id-optional", "srl_nokia-features:vlan-tpid", "srl_nokia-features:vpws", "srl_nokia-features:vrrp"],
+      "checksum": "38be5d7dc85f541d$f99b84a06ebc72ae86ad0c29628ec354028be5b0"
     },
     "build": {
       "git-branch": "SRL_24_10_B1",
-      "git-tag": "v24.10.1-492-gf8858c5836",
-      "git-sha": "f8858c5836ca991621cc94322045ddf8a640f151"
+      "git-tag": "v24.10.2-357-ga1dd6e02b5",
+      "git-sha": "a1dd6e02b5b6414a0294101031fa563700346562"
     },
     "application": [
       {
         "name": "aaa_mgr",
         "path": "/opt/srlinux/bin/sr_aaa_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "acl_mgr",
         "path": "/opt/srlinux/bin/sr_acl_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "app_mgr",
         "path": "/opt/srlinux/bin/sr_app_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "arp_nd_mgr",
         "path": "/opt/srlinux/bin/sr_arp_nd_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "bfd_mgr",
         "path": "/opt/srlinux/bin/sr_bfd_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "bgp_mgr",
         "path": "/opt/srlinux/bin/sr_bgp_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "chassis_mgr",
         "path": "/opt/srlinux/bin/sr_chassis_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "dev_mgr",
         "path": "/opt/srlinux/bin/sr_device_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "dhcp_client_mgr",
         "path": "/opt/srlinux/bin/sr_dhcp_client_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "dhcp_relay_mgr",
         "path": "/opt/srlinux/bin/sr_dhcp_relay_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "dhcp_server_mgr",
         "path": "/opt/srlinux/bin/sr_dhcp_server_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "ethcfm_mgr",
         "path": "/opt/srlinux/bin/sr_ethcfm_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "event_mgr",
         "path": "/opt/srlinux/bin/sr_event_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "evpn_mgr",
         "path": "/opt/srlinux/bin/sr_evpn_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "fhs_mgr",
         "path": "/opt/srlinux/bin/sr_fhs_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "fib_mgr",
         "path": "/opt/srlinux/bin/sr_fib_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "fiji_pdk",
@@ -103,77 +103,77 @@
       {
         "name": "gretunnel_mgr",
         "path": "/opt/srlinux/bin/sr_gretunnel_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "grpc_server",
         "path": "/opt/srlinux/bin/sr_grpc_server",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "idb_server",
         "path": "/opt/srlinux/bin/sr_idb_server",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "igmp_mgr",
         "path": "/opt/srlinux/bin/sr_igmp_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "isis_mgr",
         "path": "/opt/srlinux/bin/sr_isis_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "json_rpc",
         "path": "/opt/srlinux/bin/sr_json_rpc",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "l2_mac_learn_mgr",
         "path": "/opt/srlinux/bin/sr_l2_mac_learn_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "l2_mac_mgr",
         "path": "/opt/srlinux/bin/sr_l2_mac_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "l2_proxy_arp_nd_mgr",
         "path": "/opt/srlinux/bin/sr_l2_proxy_arp_nd_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "l2_static_mac_mgr",
         "path": "/opt/srlinux/bin/sr_l2_static_mac_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "label_mgr",
         "path": "/opt/srlinux/bin/sr_label_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "lag_mgr",
         "path": "/opt/srlinux/bin/sr_lag_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "ldp_mgr",
         "path": "/opt/srlinux/bin/sr_ldp_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "license_mgr",
         "path": "/opt/srlinux/bin/sr_license_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "linux_mgr",
         "path": "/opt/srlinux/bin/sr_linux_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "dnsmasq",
@@ -198,7 +198,7 @@
       {
         "name": "snmp_server",
         "path": "/opt/srlinux/bin/sr_snmp_server",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "timesrv",
@@ -208,32 +208,32 @@
       {
         "name": "lldp_mgr",
         "path": "/opt/srlinux/bin/sr_lldp_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "log_mgr",
         "path": "/opt/srlinux/bin/sr_log_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "macsec_mgr",
         "path": "/opt/srlinux/bin/sr_macsec_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "mcid_mgr",
         "path": "/opt/srlinux/bin/sr_mcid_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "mfib_mgr",
         "path": "/opt/srlinux/bin/sr_mfib_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "mgmt_server",
         "path": "/opt/srlinux/bin/sr_mgmt_server",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "common",
@@ -243,37 +243,37 @@
       {
         "name": "mirror_mgr",
         "path": "/opt/srlinux/bin/sr_mirror_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "mpls_mgr",
         "path": "/opt/srlinux/bin/sr_mpls_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "mplsoam_mgr",
         "path": "/opt/srlinux/bin/sr_mplsoam_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "net_inst_mgr",
         "path": "/opt/srlinux/bin/sr_net_inst_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "netconf_mgr",
         "path": "/opt/srlinux/bin/sr_netconf_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "oam_mgr",
         "path": "/opt/srlinux/bin/sr_oam_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "oc_mgmt_server",
         "path": "/opt/srlinux/bin/sr_oc_mgmt_server",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "oc_common",
@@ -283,27 +283,27 @@
       {
         "name": "ospf_mgr",
         "path": "/opt/srlinux/bin/sr_ospf_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "pcc_mgr",
         "path": "/opt/srlinux/bin/sr_pcc_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "pim_mgr",
         "path": "/opt/srlinux/bin/sr_pim_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "pinger",
         "path": "/opt/srlinux/bin/sr_pinger",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "plcy_mgr",
         "path": "/opt/srlinux/bin/sr_plcy_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "maint_mode_mgr",
@@ -313,87 +313,87 @@
       {
         "name": "pw_mgr",
         "path": "/opt/srlinux/bin/sr_pw_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "qos_mgr",
         "path": "/opt/srlinux/bin/sr_qos_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "radius_mgr",
         "path": "/opt/srlinux/bin/sr_radius_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "sdk_mgr",
         "path": "/opt/srlinux/bin/sr_sdk_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "segrt_mgr",
         "path": "/opt/srlinux/bin/sr_segrt_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "sflow_sample_mgr",
         "path": "/opt/srlinux/bin/sr_sflow_sample_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "static_route_mgr",
         "path": "/opt/srlinux/bin/sr_static_route_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "supportd",
         "path": "/opt/srlinux/bin/sr_supportd",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "te_mgr",
         "path": "/opt/srlinux/bin/sr_te_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "tepolicy_mgr",
         "path": "/opt/srlinux/bin/sr_tepolicy_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "time_mgr",
         "path": "/opt/srlinux/bin/sr_time_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "timing_stack",
         "path": "/opt/srlinux/bin/sr_timing_stack",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "twamp_mgr",
         "path": "/opt/srlinux/bin/sr_twamp_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "vrrp_mgr",
         "path": "/opt/srlinux/bin/sr_vrrp_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "vxlan_mgr",
         "path": "/opt/srlinux/bin/sr_vxlan_mgr",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "xdp_cpm",
         "path": "/opt/srlinux/bin/sr_xdp_cpm",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       },
       {
         "name": "xdp_lc",
         "path": "/opt/srlinux/bin/sr_xdp_lc",
-        "version": "2024-11-05T00:37:59.000Z"
+        "version": "2025-01-23T23:35:25.000Z"
       }
     ],
     "yang-module": [
@@ -419,7 +419,7 @@
       },
       {
         "name": "srl_nokia-acl",
-        "revision": "2024-10-31"
+        "revision": "2025-01-23"
       },
       {
         "name": "srl_nokia-acl-policers",
@@ -1204,6 +1204,10 @@
       {
         "name": "srl_nokia-twamp",
         "revision": "2024-07-31"
+      },
+      {
+        "name": "yang",
+        "revision": "2017-02-20"
       }
     ]
   },
@@ -3368,7 +3372,7 @@
           ]
         },
         "linuxadmin-user": {
-          "password": "$y$j9T$21VgKI4Ug8Q/odUe/Tne31$6.0V1o7A4OJEjI8zXw9WAdqm8cJ.AJPaHEZM/Xug1XA"
+          "password": "$y$j9T$f/fNdwO8wCAHXmDGetrrE/$drOi8I6XEm316yo4l6tdGCdhotA8Brw2M6.98OV8mC1"
         }
       },
       "server-group": [
@@ -3753,6 +3757,11 @@
           "router-id": "10.0.0.12",
           "best-path-selection": {
             "advertise-inactive": true
+          },
+          "bgp-label": {
+            "labeled-unicast": {
+              "dynamic-label-block": "bgp-lu-block"
+            }
           },
           "afi-safi": [
             {
@@ -4155,7 +4164,6 @@
           {
             "name": "10",
             "match": {
-              "protocol": "srl_nokia-common:bgp-label",
               "family": [
                 "srl_nokia-common:ipv4-labeled-unicast"
               ]
@@ -4177,7 +4185,6 @@
           {
             "name": "10",
             "match": {
-              "protocol": "srl_nokia-common:bgp-label",
               "family": [
                 "srl_nokia-common:ipv4-labeled-unicast"
               ]
