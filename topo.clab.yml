@@ -6,15 +6,12 @@ topology:
     kind: nokia_sros
   kinds:
     nokia_srsim:
-      image: registry.srlinux.dev/pub/nokia_srsim:25.7.R1
+      image: nokia_srsim:25.7.R1
       license: ../license-srsim25.txt
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:24.10.2
+      image: ghcr.io/nokia/srlinux:25.7.1
       # license is required to run IXR-DNX and 7730 on Containerlab
-      license: ../license-srl24.10.txt
-    nokia_sros:
-      image: registry.srlinux.dev/pub/nokia_sros:24.10.R1
-      license: ../license-sros24.txt
+      license: ../license-srl25.7.txt
     linux:
       image: ghcr.io/mfzhsn/network-multitool-sshd:0.0.2
   nodes:
@@ -127,7 +124,7 @@ topology:
     #     - 51203:830
     R12-SXR: #SXR
       kind: nokia_srlinux
-      type: sxr1d32d
+      type: sxr-1d-32d
       startup-config: ./startup_config/R12-SXR.partial.txt
       ports:
         - 51201:22

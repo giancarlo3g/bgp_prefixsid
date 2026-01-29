@@ -1,3 +1,7 @@
+set / interface system0 admin-state enable
+set / interface system0 subinterface 0 admin-state enable
+set / interface system0 subinterface 0 ipv4 admin-state enable
+set / interface system0 subinterface 0 ipv4 address 10.0.0.12/32
 set / interface ethernet-1/1 admin-state enable
 set / interface ethernet-1/1 subinterface 0 admin-state enable
 set / interface ethernet-1/1 subinterface 0 ipv4 admin-state enable
@@ -134,7 +138,7 @@ set / routing-policy prefix-set if-system prefix 10.0.0.12/32 mask-length-range 
 set / routing-policy community-set abr-access-2 member [ 65000:0 65000:2 ]
 set / routing-policy community-set access-2 member [ 65000:2 ]
 set / routing-policy community-set core member [ 65000:0 ]
-set / routing-policy policy export-label-system statement 10 match prefix-set if-system
+set / routing-policy policy export-label-system statement 10 match prefix prefix-set if-system
 set / routing-policy policy export-label-system statement 10 match protocol local
 set / routing-policy policy export-label-system statement 10 action policy-result accept
 set / routing-policy policy export-label-system statement 10 action bgp communities add abr-access-2
