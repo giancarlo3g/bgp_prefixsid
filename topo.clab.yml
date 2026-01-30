@@ -9,9 +9,9 @@ topology:
       image: nokia_srsim:25.7.R1
       license: ../license-srsim25.txt
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:25.7.1
+      image: ghcr.io/nokia/srlinux:25.10.1
       # license is required to run IXR-DNX and 7730 on Containerlab
-      license: ../license-srl25.7.txt
+      license: ../license-srl25.10.txt
     linux:
       image: ghcr.io/mfzhsn/network-multitool-sshd:0.0.2
   nodes:

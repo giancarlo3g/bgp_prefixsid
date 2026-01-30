@@ -153,3 +153,7 @@ set / routing-policy policy toAccess statement 10 action bgp next-hop set 4.4.4.
 set / routing-policy policy toCore statement 10 match family [ ipv4-labeled-unicast ]
 set / routing-policy policy toCore statement 10 action policy-result accept
 set / routing-policy policy toCore statement 10 action bgp next-hop set 2.2.2.2
+
+# Flex Algo - requires 25.10.1 at least
+set / network-instance default segment-routing mpls local-prefix-sid 1 flex-algo 128 ipv4-node-sid index 212
+set / network-instance default protocols isis instance 0 segment-routing flexible-algorithm-binding 128 participate true
