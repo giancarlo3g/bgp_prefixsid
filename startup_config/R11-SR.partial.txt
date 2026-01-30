@@ -544,10 +544,21 @@ configure {
 }
 
 # all router for Flex Algo participation
+/configure router "Base" isis 0 traffic-engineering-options application-link-attributes legacy false
 /configure router "Base" isis 0 flexible-algorithms admin-state enable
 /configure router "Base" isis 0 flexible-algorithms flex-algo 128 participate true
 /configure { router "Base" isis 0 flexible-algorithms flex-algo 128 loopfree-alternate }
 /configure { router "Base" isis 0 flexible-algorithms flex-algo 128 micro-loop-avoidance }
-
 # different per router
 /configure router "Base" segment-routing sr-mpls prefix-sids "system" flex-algo 128 ipv4-sid index 211
+
+#R11 Flex-Algo definition for ISIS 1
+/configure router "Base" isis 1 traffic-engineering-options application-link-attributes legacy false
+/configure routing-options flexible-algorithm-definitions flex-algo "Flex-Algo-128-2" admin-state enable
+/configure routing-options flexible-algorithm-definitions flex-algo "Flex-Algo-128-2" description "Flex-Algo for Delay Metric for ISIS 1"
+/configure routing-options flexible-algorithm-definitions flex-algo "Flex-Algo-128-2" metric-type delay
+/configure router "Base" isis 1 flexible-algorithms admin-state enable
+/configure router "Base" isis 1 flexible-algorithms flex-algo 128 participate true
+/configure router "Base" isis 1 flexible-algorithms flex-algo 128 advertise "Flex-Algo-128-2"
+/configure router "Base" isis 1 flexible-algorithms flex-algo 128 { loopfree-alternate }
+/configure router "Base" isis 1 flexible-algorithms flex-algo 128 { micro-loop-avoidance }

@@ -155,5 +155,13 @@ set / routing-policy policy toCore statement 10 action policy-result accept
 set / routing-policy policy toCore statement 10 action bgp next-hop set 2.2.2.2
 
 # Flex Algo - requires 25.10.1 at least
-set / network-instance default segment-routing mpls local-prefix-sid 1 flex-algo 128 ipv4-node-sid index 212
+set / network-instance default protocols isis instance 0 traffic-engineering legacy-link-attribute-advertisement false
 set / network-instance default protocols isis instance 0 segment-routing flexible-algorithm-binding 128 participate true
+set / network-instance default protocols isis instance 1 traffic-engineering legacy-link-attribute-advertisement false
+set / network-instance default protocols isis instance 1 segment-routing flexible-algorithm-binding 128 participate true
+set / network-instance default segment-routing mpls local-prefix-sid 1 flex-algo 128 ipv4-node-sid index 212
+
+set / network-instance default protocols isis instance 1 segment-routing flexible-algorithm-binding 128 advertised true
+set / network-instance default flexible-algorithm flexible-algorithm-definitions flexible-algorithm-definition 128 admin-state enable
+set / network-instance default flexible-algorithm flexible-algorithm-definitions flexible-algorithm-definition 128 description "Flex-Algo for Delay Metric for ISIS 1"
+set / network-instance default flexible-algorithm flexible-algorithm-definitions flexible-algorithm-definition 128 metric-type delay

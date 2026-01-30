@@ -397,6 +397,7 @@ configure {
 }
 
 # all router for Flex Algo participation
+/configure router "Base" isis 0 traffic-engineering-options application-link-attributes legacy false
 /configure router "Base" isis 0 flexible-algorithms admin-state enable
 /configure router "Base" isis 0 flexible-algorithms flex-algo 128 participate true
 /configure { router "Base" isis 0 flexible-algorithms flex-algo 128 loopfree-alternate }

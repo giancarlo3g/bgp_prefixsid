@@ -478,6 +478,7 @@ configure {
 
 
 #R07 Flex-Algo definition
+/configure router "Base" isis 0 traffic-engineering-options application-link-attributes legacy false
 /configure routing-options flexible-algorithm-definitions flex-algo "Flex-Algo-128" admin-state enable
 /configure routing-options flexible-algorithm-definitions flex-algo "Flex-Algo-128" description "Flex-Algo for Delay Metric"
 /configure routing-options flexible-algorithm-definitions flex-algo "Flex-Algo-128" metric-type delay
