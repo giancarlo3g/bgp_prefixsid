@@ -17,7 +17,7 @@ yes | cp ./clab-bgpprefixsid/R08-SR/tftpboot/config.txt ./config/R08-SR.cfg
 yes | cp ./clab-bgpprefixsid/R09-SR/tftpboot/config.txt ./config/R09-SR.cfg
 yes | cp ./clab-bgpprefixsid/R10-SR/tftpboot/config.txt ./config/R10-SR.cfg
 yes | cp ./clab-bgpprefixsid/R11-SR/tftpboot/config.txt ./config/R11-SR.cfg
-yes | cp ./clab-bgpprefixsid/R12-SR/tftpboot/config.txt ./config/R12-SR.cfg
+no  | cp ./clab-bgpprefixsid/R12-SR/tftpboot/config.txt ./config/R12-SR.cfg
 yes | cp ./clab-bgpprefixsid/R13-IXR/tftpboot/config.txt ./config/R13-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R14-IXR/tftpboot/config.txt ./config/R14-IXR.cfg
 yes | cp ./clab-bgpprefixsid/R15-IXR/tftpboot/config.txt ./config/R15-IXR.cfg

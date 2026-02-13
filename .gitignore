@@ -1,6 +1,7 @@
+.*
 clab-bgpprefixsid/*
 *.bak
 *.pcap
 *.drawio
-.gitignore
+!.gitignore
 *.annotations.json
