@@ -2,6 +2,8 @@
 
 A multi-domain Nokia SROS/SR Linux containerized lab demonstrating BGP Prefix SID (Segment Routing) across three network domains. Built with [ContainerLab](https://containerlab.dev/).
 
+![Topology](Topology.png)
+
 ## Overview
 
 This lab implements **Seamless MPLS** using BGP Prefix SID (RFC 8669) to distribute segment routing labels across domain boundaries. Key features:
@@ -37,7 +39,7 @@ sudo containerlab destroy -t topo.clab.yml
 
 ## Network Topology
 
-![Physical Topology](detailed_topology.png)
+![Lab_Topology](topology_clab.png)
 
 The lab has three domains connected in a chain:
 
