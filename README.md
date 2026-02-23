@@ -84,9 +84,9 @@ Connected testers: tester13 (192.168.0.13), tester14 (192.168.0.14), tester16 (1
 
 ```bash
 # SSH to a router (default credentials: admin / admin)
-ssh admin@localhost -p 50101   # R01-IXR
-ssh admin@localhost -p 50501   # R05-SR (ABR)
-ssh admin@localhost -p 51201   # R12-SXR (SR Linux)
+ssh admin@R01-IXR   # R01-IXR
+ssh admin@R05-SR   # R05-SR (ABR)
+ssh admin@R12-SXR # R12-SXR (SR Linux)
 
 # Run commands on tester containers
 docker exec -it tester1 ping 192.168.0.2
