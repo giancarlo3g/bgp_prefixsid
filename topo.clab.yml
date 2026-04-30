@@ -6,7 +6,7 @@ topology:
     kind: nokia_sros
   kinds:
     nokia_srsim:
-      image: nokia_srsim:25.7.R1
+      image: nokia_srsim:25.10.R2
       license: ../license-srsim25.txt
     nokia_srlinux:
       image: ghcr.io/nokia/srlinux:25.10.1
