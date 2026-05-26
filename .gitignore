@@ -1,5 +1,8 @@
+.*
 clab-bgpprefixsid/*
-license-sros23.txt
 *.bak
 *.pcap
 *.drawio
+!.gitignore
+*.annotations.json
+.env
