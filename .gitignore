@@ -1,4 +1,3 @@
-.*
 clab-bgpprefixsid/*
 *.bak
 *.pcap
@@ -6,3 +5,4 @@ clab-bgpprefixsid/*
 !.gitignore
 *.annotations.json
 .env
+.vscode
