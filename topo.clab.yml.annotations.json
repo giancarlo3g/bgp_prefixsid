@@ -1,0 +1,259 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "R01-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 560,
+        "y": 0
+      }
+    },
+    {
+      "id": "R02-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 560,
+        "y": 220
+      }
+    },
+    {
+      "id": "R03-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 720,
+        "y": 0
+      }
+    },
+    {
+      "id": "R04-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 720,
+        "y": 220
+      }
+    },
+    {
+      "id": "R05-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 900,
+        "y": 0
+      }
+    },
+    {
+      "id": "R06-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 900,
+        "y": 220
+      },
+      "labelBackgroundColor": "#F47F31",
+      "icon": "pe"
+    },
+    {
+      "id": "R07-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1120,
+        "y": 0
+      }
+    },
+    {
+      "id": "R08-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1120,
+        "y": 220
+      }
+    },
+    {
+      "id": "R09-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1340,
+        "y": 0
+      }
+    },
+    {
+      "id": "R10-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1340,
+        "y": 220
+      }
+    },
+    {
+      "id": "R11-SR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1580,
+        "y": 0
+      },
+      "labelBackgroundColor": "#F47F31",
+      "icon": "pe"
+    },
+    {
+      "id": "R12-SXR",
+      "interfacePattern": "e1-{n}",
+      "position": {
+        "x": 1580,
+        "y": 220
+      },
+      "labelBackgroundColor": "#F47F31",
+      "icon": "pe"
+    },
+    {
+      "id": "R13-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1800,
+        "y": 0
+      }
+    },
+    {
+      "id": "R14-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1800,
+        "y": 220
+      }
+    },
+    {
+      "id": "R15-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 1980,
+        "y": 120
+      }
+    },
+    {
+      "id": "R16-IXR",
+      "interfacePattern": "1/1/c{n}/1",
+      "position": {
+        "x": 2120,
+        "y": 120
+      }
+    },
+    {
+      "id": "tester1",
+      "position": {
+        "x": 440,
+        "y": 0
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester2",
+      "position": {
+        "x": 440,
+        "y": 220
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester3",
+      "position": {
+        "x": 720,
+        "y": -140
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester4",
+      "position": {
+        "x": 720,
+        "y": 380
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester5",
+      "position": {
+        "x": 900,
+        "y": -140
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester11",
+      "position": {
+        "x": 1580,
+        "y": -140
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester13",
+      "position": {
+        "x": 1800,
+        "y": -140
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester14",
+      "position": {
+        "x": 1800,
+        "y": 380
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "tester16",
+      "position": {
+        "x": 2260,
+        "y": 120
+      },
+      "icon": "client",
+      "labelBackgroundColor": "#37CC73"
+    },
+    {
+      "id": "gnmic",
+      "position": {
+        "x": 1340,
+        "y": -340
+      },
+      "icon": "server"
+    },
+    {
+      "id": "prometheus",
+      "position": {
+        "x": 1400,
+        "y": -340
+      },
+      "icon": "server"
+    },
+    {
+      "id": "grafana",
+      "position": {
+        "x": 1460,
+        "y": -340
+      },
+      "icon": "server"
+    },
+    {
+      "id": "grafana-mcp",
+      "position": {
+        "x": 1520,
+        "y": -340
+      },
+      "icon": "server"
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}

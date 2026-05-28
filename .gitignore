@@ -3,6 +3,5 @@ clab-bgpprefixsid/*
 *.pcap
 *.drawio
 !.gitignore
-*.annotations.json
 .env
 .vscode
