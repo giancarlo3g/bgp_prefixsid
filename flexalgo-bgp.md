@@ -328,47 +328,143 @@ A:admin@R16-IXR# info flat
 > Alternatively, one could use BGP color community which would not require a separate loopback per flex algo. Instead, only a separate node SID per algo is required for the system interface. 
 It would also avoid the need of the route-next-hop per service setting. However, it would require export policies for the EVPN service on egress PE and import policy on ingress PE to match the color community and map it to the specific flex algo.
 
-Both target and color extended communities must be added at export on egress PE.
+Both target and color extended communities must be added at export on egress PE. Also, there has to be an import policy for the service to steer the traffic with color 100 to flex algo 128.
+
+### 1. PE
+
+R16
+```
+/configure policy-options      
+    community "color-100" { member "color:00:100" }
+    community "vsi-4010" { member "target:65000:4010" }
+    policy-statement "epipe-R5R16-export-c100" default-action action-type accept
+    policy-statement "epipe-R5R16-export-c100" default-action community add ["color-100" "vsi-4010"]
+    policy-statement "epipe-R5R16-import-c100" entry 10 from community expression "[vsi-4010] AND [color-100]"
+    policy-statement "epipe-R5R16-import-c100" entry 10 action action-type accept
+    policy-statement "epipe-R5R16-import-c100" entry 10 action flex-algo 128
+```
 
 ```
-configure {
-    policy-options {
-        community "color-100" {
-            member "color:00:100" { }
-        }
-        community "vsi-1" {
-            member "target:64500:1" { }
-        }
-        policy-statement "epipe-1-export-c100" {
-            default-action {
-                action-type accept
-                community {
-                    add ["vsi-1" "color-100"]
-                }
-            }
-        }
-    }
-    service {
-        epipe "Epipe-1" {
-            admin-state enable
-            service-id 1
-            customer "1"
-            bgp 1 {
-                vsi-export ["epipe-1-export-c100"]
-                route-target {
-                    import "target:64500:1"
-                }
-            }
-            bgp-evpn {
-                evi 1
-                local-attachment-circuit "PE6" {
-                    eth-tag 6
-                }
-                remote-attachment-circuit "PE1" {
-                    eth-tag 1
-                }
-            }
-        }
-    }
-}
+/configure service epipe "R5-R16-flexalgo"
+    admin-state enable
+    service-id 4010
+    customer "1"
+    service-mtu 1514
+    bgp 1 vsi-import ["epipe-R5R16-import-c100"]
+    bgp 1 vsi-export ["epipe-R5R16-export-c100"]
+    sap 1/1/c2/1:128 { }
+    bgp-evpn evi 4010
+    bgp-evpn local-attachment-circuit "local-ac" eth-tag 165128
+    bgp-evpn remote-attachment-circuit "remote-ac" eth-tag 516128
+    bgp-evpn mpls 1 admin-state enable
+    bgp-evpn mpls 1 auto-bind-tunnel resolution any
+```
+
+R5
+```
+/configure policy-options 
+    community "color-100" { member "color:00:100" }
+    community "vsi-4010" { member "target:65000:4010" }
+    policy-statement "epipe-R5R16-export-c100" default-action action-type accept
+    policy-statement "epipe-R5R16-export-c100" default-action community add ["color-100" "vsi-4010"]
+    policy-statement "epipe-R5R16-import-c100" entry 10 from community expression "[vsi-4010] AND [color-100]"
+    policy-statement "epipe-R5R16-import-c100" entry 10 action action-type accept
+    policy-statement "epipe-R5R16-import-c100" entry 10 action flex-algo 128
+```
+
+```
+/configure service epipe "R5-R16-flexalgo"
+    admin-state enable
+    service-id 4010
+    customer "1"
+    service-mtu 1514
+    bgp 1 vsi-import ["epipe-R5R16-import-c100"]
+    bgp 1 vsi-export ["epipe-R5R16-export-c100"]
+    sap 1/1/c4/1:128 { }
+    bgp-evpn evi 4010
+    bgp-evpn local-attachment-circuit "local-ac" eth-tag 516128
+    bgp-evpn remote-attachment-circuit "remote-ac" eth-tag 165128
+    bgp-evpn mpls 1 admin-state enable
+    bgp-evpn mpls 1 auto-bind-tunnel resolution any
+```
+
+### 2. ABR (RR inline)
+
+In order to have a path available in Flex Algo 128 to the BGP-LU NH (10.0.0.5 and 10.0.20.16 in this example), these routes will be redistributed between ISIS instances for lab purposes.
+
+R11
+```
+/configure policy-options  
+    prefix-list "R05" { prefix 10.0.0.5/32 type exact }
+    prefix-list "R16" { prefix 10.0.20.16/32 type exact }
+    policy-statement "isis0-to-isis1-flexalgo" entry 10 from prefix-list ["R05"]
+    policy-statement "isis0-to-isis1-flexalgo" entry 10 from protocol name [isis]
+    policy-statement "isis0-to-isis1-flexalgo" entry 10 from protocol instance 0
+    policy-statement "isis0-to-isis1-flexalgo" entry 10 to protocol name [isis]
+    policy-statement "isis0-to-isis1-flexalgo" entry 10 to protocol instance 1
+    policy-statement "isis0-to-isis1-flexalgo" entry 10 action action-type accept
+    policy-statement "isis1-to-isis0-flexalgo" entry 10 from prefix-list ["R16"]
+    policy-statement "isis1-to-isis0-flexalgo" entry 10 from protocol name [isis]
+    policy-statement "isis1-to-isis0-flexalgo" entry 10 from protocol instance 1
+    policy-statement "isis1-to-isis0-flexalgo" entry 10 to protocol name [isis]
+    policy-statement "isis1-to-isis0-flexalgo" entry 10 to protocol instance 0
+    policy-statement "isis1-to-isis0-flexalgo" entry 10 action action-type accept
+```
+
+```
+/configure router isis 0
+    export-policy ["isis1-to-isis0-flexalgo"]
+```
+
+```
+/configure router isis 1
+    export-policy ["isis0-to-isis1-flexalgo"]
+```
+
+Addionally, the Anycast loopbacks used must have a Node SID for Flex Algo 128
+```
+/configure router "Base" isis 1 interface "BGPAnycast-Access" flex-algo 128 ipv4-node-sid index 222
+/configure router "Base" isis 0 interface "BGPAnycast-Core" flex-algo 128 ipv4-node-sid index 111
+```
+
+### 3. Useful commands
+```
+/show router isis
+/show router isis flex-algo 128
+/show router isis prefix-sids algo 128
+/show router isis database R05-SR.00-00 detail 
+/show router isis 1 routes ipv4-unicast 10.0.0.5/32 flex-algo 128 detail
+/show router isis routes ipv4-unicast 10.0.20.16/32 flex-algo 128 detail
+ /show router isis routes ipv4-unicast 10.0.20.16/32 flex-algo 128
+/show service id "R5-R16-flexalgo" base
+```
+
+### 4. Troubleshooting
+
+To compare the paths between flex algo 0 and 128, one can use the `oam lsp-trace` command.
+
+Flex Algo 0
+```
+A:admin@R05-SR# /oam lsp-trace sr-isis prefix 10.0.20.16/32           
+lsp-trace to 10.0.20.16/32: 1 hops min, 30 hops max, 104 byte packets
+1  10.0.0.7  rtt=1.62ms rc=8(DSRtrMatchLabel) rsc=1  
+2  10.0.0.9  rtt=2.73ms rc=8(DSRtrMatchLabel) rsc=1  
+3  10.0.0.11  rtt=2.82ms rc=8(DSRtrMatchLabel) rsc=1  
+4  10.0.20.13  rtt=4.45ms rc=8(DSRtrMatchLabel) rsc=1  
+5  10.0.20.15  rtt=6.63ms rc=8(DSRtrMatchLabel) rsc=1  
+6  10.0.20.16  rtt=7.16ms rc=3(EgressRtr) rsc=1 
+```
+
+Flex Algo 128
+```
+A:admin@R05-SR# /oam lsp-trace sr-isis prefix 10.0.20.16/32 flex-algo 128
+lsp-trace to 10.0.20.16/32: 1 hops min, 30 hops max, 104 byte packets
+1  10.0.0.6  rtt=1.83ms rc=8(DSRtrMatchLabel) rsc=1 
+2  10.0.0.8  rtt=4.05ms rc=8(DSRtrMatchLabel) rsc=1  
+3  10.0.0.10  rtt=3.19ms rc=8(DSRtrMatchLabel) rsc=1  
+4  10.0.0.9  rtt=4.16ms rc=8(DSRtrMatchLabel) rsc=1  
+5  10.0.0.11  rtt=3.13ms rc=8(DSRtrMatchLabel) rsc=1  
+6  10.0.20.13  rtt=4.99ms rc=8(DSRtrMatchLabel) rsc=1  
+7  10.0.20.15  rtt=6.65ms rc=8(DSRtrMatchLabel) rsc=1  
+8  10.0.20.16  rtt=6.48ms rc=3(EgressRtr) rsc=1 
 ```

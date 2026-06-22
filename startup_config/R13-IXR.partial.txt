@@ -473,3 +473,6 @@ configure {
 /configure { router "Base" isis 1 flexible-algorithms flex-algo 128 micro-loop-avoidance }
 # different per router
 /configure router "Base" segment-routing sr-mpls prefix-sids "system" flex-algo 128 ipv4-sid index 213
+
+/configure router "Base" interface "toR15" if-attribute delay static 1000
+/configure router "Base" interface "toR11" if-attribute delay static 1000

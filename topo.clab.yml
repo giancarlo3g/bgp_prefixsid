@@ -231,6 +231,9 @@ topology:
         - ifconfig eth1.20 192.168.20.5
         - ifconfig eth1.20 netmask 255.255.255.0
         - route add default gw 192.168.20.1 eth1.20
+        - ip link add link eth1 name eth1.128 type vlan id 128
+        - ifconfig eth1.128 192.168.128.5
+        - ifconfig eth1.128 netmask 255.255.255.0
     tester11:
       kind: linux
       exec:
@@ -256,6 +259,9 @@ topology:
         - ip link add link eth1 name eth1.116 type vlan id 116
         - ifconfig eth1.116 192.168.116.16
         - ifconfig eth1.116 netmask 255.255.255.0
+        - ip link add link eth1 name eth1.128 type vlan id 128
+        - ifconfig eth1.128 192.168.128.16
+        - ifconfig eth1.128 netmask 255.255.255.0
 
     #################################################################################################################################################
     #Telemetry 

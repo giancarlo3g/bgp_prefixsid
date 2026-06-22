@@ -714,3 +714,24 @@ configure {
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 advertise "Flex-Algo-128-1"
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 { loopfree-alternate }
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 { micro-loop-avoidance }
+
+#R05-R16 epipe with Flex Algo
+/configure { policy-options community "color-100" member "color:00:100" }
+/configure { policy-options community "vsi-4010" member "target:65000:4010" }
+/configure policy-options policy-statement "epipe-R5R16-export-c100" default-action action-type accept
+/configure policy-options policy-statement "epipe-R5R16-export-c100" default-action community add ["color-100" "vsi-4010"]
+/configure service epipe "R5-R16-flexalgo" admin-state enable
+/configure service epipe "R5-R16-flexalgo" service-id 4010
+/configure service epipe "R5-R16-flexalgo" customer "1"
+/configure service epipe "R5-R16-flexalgo" service-mtu 1514
+/configure service epipe "R5-R16-flexalgo" bgp 1 vsi-export ["epipe-R5R16-export-c100"]
+/configure service epipe "R5-R16-flexalgo" bgp 1 route-target import "target:65000:4010"
+/configure { service epipe "R5-R16-flexalgo" sap 1/1/c4/1:128 }
+/configure service epipe "R5-R16-flexalgo" bgp-evpn evi 4010
+/configure service epipe "R5-R16-flexalgo" bgp-evpn local-attachment-circuit "local-ac" eth-tag 516128
+/configure service epipe "R5-R16-flexalgo" bgp-evpn remote-attachment-circuit "remote-ac" eth-tag 165128
+/configure service epipe "R5-R16-flexalgo" bgp-evpn mpls 1 admin-state enable
+/configure service epipe "R5-R16-flexalgo" bgp-evpn mpls 1 auto-bind-tunnel resolution any
+
+# There must be a path in flex-algo 128
+/configure router "Base" interface "toR06" if-attribute delay static 1000

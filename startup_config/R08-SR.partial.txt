@@ -405,3 +405,6 @@ configure {
 
 # different per router
 /configure router "Base" segment-routing sr-mpls prefix-sids "system" flex-algo 128 ipv4-sid index 208
+
+/configure router "Base" interface "toR10" if-attribute delay static 1000
+/configure router "Base" interface "toR06" if-attribute delay static 1000

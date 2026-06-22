@@ -595,3 +595,6 @@ configure {
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 advertise "Flex-Algo-128-1"
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 { loopfree-alternate }
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 { micro-loop-avoidance }
+
+/configure router interface "toR08" if-attribute delay static 1000
+/configure router interface "toR05" if-attribute delay static 1000

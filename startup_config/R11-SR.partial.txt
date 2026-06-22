@@ -562,3 +562,27 @@ configure {
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 advertise "Flex-Algo-128-2"
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 { loopfree-alternate }
 /configure router "Base" isis 1 flexible-algorithms flex-algo 128 { micro-loop-avoidance }
+
+/configure router "Base" interface "toR13" if-attribute delay static 1000
+/configure router "Base" interface "toR09" if-attribute delay static 1000
+
+/configure router "Base" isis 1 interface "BGPAnycast-Access" flex-algo 128 ipv4-node-sid index 222
+/configure router "Base" isis 0 interface "BGPAnycast-Core" flex-algo 128 ipv4-node-sid index 111
+
+/configure policy-options { prefix-list "R05" prefix 10.0.0.5/32 type exact }
+/configure policy-options policy-statement "isis0-to-isis1-flexalgo" entry 10 from prefix-list ["R05"]
+/configure policy-options policy-statement "isis0-to-isis1-flexalgo" entry 10 from protocol name [isis]
+/configure policy-options policy-statement "isis0-to-isis1-flexalgo" entry 10 from protocol instance 0
+/configure policy-options policy-statement "isis0-to-isis1-flexalgo" entry 10 to protocol name [isis]
+/configure policy-options policy-statement "isis0-to-isis1-flexalgo" entry 10 to protocol instance 1
+/configure policy-options policy-statement "isis0-to-isis1-flexalgo" entry 10 action action-type accept
+/configure router "Base" isis 1 export-policy ["isis0-to-isis1-flexalgo"]
+
+/configure policy-options { prefix-list "R16" prefix 10.0.20.16/32 type exact }
+/configure policy-options policy-statement "isis1-to-isis0-flexalgo" entry 10 from prefix-list ["R16"]
+/configure policy-options policy-statement "isis1-to-isis0-flexalgo" entry 10 from protocol name [isis]
+/configure policy-options policy-statement "isis1-to-isis0-flexalgo" entry 10 from protocol instance 1
+/configure policy-options policy-statement "isis1-to-isis0-flexalgo" entry 10 to protocol name [isis]
+/configure policy-options policy-statement "isis1-to-isis0-flexalgo" entry 10 to protocol instance 0
+/configure policy-options policy-statement "isis1-to-isis0-flexalgo" entry 10 action action-type accept
+/configure router "Base" isis 0 export-policy ["isis1-to-isis0-flexalgo"]
